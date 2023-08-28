@@ -1,6 +1,6 @@
 ﻿import { MessageContainer } from "./MessageContainer";
 
-export const Chat = ({ messages }) => {
+export const Chat = ({ messages, sendMessage }) => {
 
   return (
     <div>

@@ -42,7 +42,7 @@ export const App = () => {
       <hr className="line" />
       {!connection
         ? <Lobby joinRoom={joinRoom} />
-        : <Chat messages={messages} />
+        : <Chat messages={messages} sendMessage={sendMessage} />
       }
     </div>
   );
