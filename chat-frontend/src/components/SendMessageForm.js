@@ -5,20 +5,23 @@ export const SendMessageForm = ({ sendMessage }) => {
   const [message, setMessage] = useState("");
 
   return (
-    <div>
-      <Form>
-        <InputGroup>
-          <FormControl
-            placeholder="message..."
-            onChange={e => setMessage(e.target.value)} value={message} />
-        </InputGroup>
-        <InputGroup.Append>
-          <Button
-            variant="primary"
-            type="submit"
-          >Send</Button>
-        </InputGroup.Append>
-      </Form>
-    </div>
+    <Form
+      onSubmit={e => {
+        e.preventDefault();
+        sendMessage(message);
+        setMessage("");
+      }}
+    >
+      <InputGroup>
+        <FormControl
+          placeholder="message..."
+          onChange={e => setMessage(e.target.value)} value={message} />
+      </InputGroup>
+        <Button
+          variant="primary"
+          type="submit"
+          disabled={!message}
+        >Send</Button>
+    </Form>
   );
 };

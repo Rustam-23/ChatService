@@ -29,6 +29,9 @@ namespace ChatService
                     policy.AllowCredentials();
                 });
             });
+
+            services.AddSingleton<IDictionary<string, UserConnection>>(options =>
+                new Dictionary<string, UserConnection>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
